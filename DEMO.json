@@ -1,0 +1,29 @@
+{
+  "video_script": [
+    {"goto": "/", "wait_ms": 2500, "caption": "Landing page - what the product is"},
+    {"click": "a:has-text('Get started')", "wait_ms": 1500},
+    {"fill": "input[name='email']", "value": "demo@example.com", "wait_ms": 500},
+    {"fill": "textarea#prompt", "value": "packing line 3 dead, swapped prox sensor and relay, PLC looks fine, still nothing", "wait_ms": 500},
+    {"click": "button:has-text('Diagnose')", "wait_ms": 3500},
+    {"scroll": 600, "wait_ms": 1500},
+    {"goto": "/dashboard", "wait_ms": 2500, "caption": "Manager dashboard with retirement risk"},
+    {"hover": ".card:first-child", "wait_ms": 1500}
+  ],
+  "screenshot_shots": [
+    {"path": "/", "description": "Hero landing with architecture diagram", "wait_ms": 2500},
+    {"path": "/diagnose", "description": "Diagnose screen with plant asset status", "wait_ms": 2000},
+    {"path": "/dashboard", "description": "Manager dashboard with seeded knowledge risk data", "wait_ms": 2000},
+    {"path": "/settings", "description": "API key settings panel", "wait_ms": 1500}
+  ],
+  "submission": {
+    "inspiration": "We built Shift Sage after reading about the $1.4T unplanned downtime problem and realizing most of that knowledge never makes it into a CMMS. Every plant has a Frank - the tech who knows the bypass switch the manual never mentions. When Frank retires, that fix walks out the door. We wanted a tool a night-shift tech could open at 2 AM and trust because every step cites a real work order from their own plant.",
+    "what_it_does": "Shift Sage ingests messy maintenance work orders and technician notes, then gives frontline techs a cited diagnostic plan when a fault hits. It surfaces undocumented workarounds buried in free-text notes, auto-drafts cleaned work orders and shift handover summaries, and gives managers a view of recurring failures and retirement-risk knowledge concentration.",
+    "how_we_built_it": "We used Next.js 14 with Tailwind and shadcn-style components for the frontend, SQLite with better-sqlite3 for plant history, and keyword retrieval plus large-context LLM reasoning. Gemini 2.5 Flash handles primary diagnosis, Groq streams the live reasoning trace, and Mistral serves as failover. API keys live in localStorage and travel as request headers - never stored server-side. Demo mode uses a seeded dataset with 18 realistic work orders and cached responses for the scripted fault.",
+    "challenges": "Grounding every recommendation to a specific work order was the hardest part. We built validation that rejects LLM output citing IDs not in retrieved history, and refuse to diagnose when asset history is too thin. Getting the synthetic dataset to feel real - abbreviations, jargon, hidden bypass switches - took careful seeding so the demo wow moment lands every time.",
+    "accomplishments": "We are proud of the end-to-end loop: paste a vague fault, watch the agent trace its reasoning, get a ranked plan citing Frank's undocumented bypass, then one-click generate the work order and shift handover. The manager dashboard flags that this critical fix depends on one retiring technician.",
+    "what_we_learned": "Noisy maintenance logs are the real bottleneck before any AI can help. Cleaning and structuring incoming reports is as valuable as the diagnosis itself. Plants trust cited history over generic LLM answers - grounding is not optional.",
+    "whats_next": "Connect to Atlas CMMS exports for live data ingest, add embedding search for larger plants, push shift handovers to SMS/email, build technician training paths from workaround patterns, and add multi-site support for regional reliability teams.",
+    "built_with": ["next.js-14", "typescript", "tailwindcss", "shadcn-ui", "sqlite", "better-sqlite3", "google-gemini", "groq", "mistral", "docker"],
+    "category_hint": "Industrial AI / Predictive Maintenance"
+  }
+}

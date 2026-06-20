@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none">
+  <rect width="800" height="480" rx="16" fill="#f0f7f4"/>
+  <rect x="40" y="40" width="220" height="400" rx="12" fill="#fff" stroke="#b9ddcd" stroke-width="2"/>
+  <text x="60" y="75" fill="#1b3c31" font-family="system-ui,sans-serif" font-size="14" font-weight="700">Fault Input</text>
+  <rect x="60" y="95" width="180" height="80" rx="6" fill="#f0f7f4" stroke="#8cc5ad"/>
+  <text x="70" y="120" fill="#255a47" font-family="monospace" font-size="9">packing line 3 dead,</text>
+  <text x="70" y="135" fill="#255a47" font-family="monospace" font-size="9">swapped prox sensor...</text>
+  <rect x="60" y="190" width="100" height="32" rx="6" fill="#2d7057"/>
+  <text x="82" y="211" fill="#fff" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Diagnose</text>
+
+  <path d="M270 240 L320 240" stroke="#3d8c6d" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3d8c6d"/>
+    </marker>
+  </defs>
+
+  <rect x="330" y="40" width="220" height="400" rx="12" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  <text x="350" y="75" fill="#8cc5ad" font-family="system-ui,sans-serif" font-size="14" font-weight="700">Agent Trace</text>
+  <text x="350" y="110" fill="#94a3b8" font-family="monospace" font-size="9">Searching PL3 history...</text>
+  <text x="350" y="130" fill="#94a3b8" font-family="monospace" font-size="9">Pattern: PL3-E04 x4</text>
+  <text x="350" y="150" fill="#8cc5ad" font-family="monospace" font-size="9">Workaround found!</text>
+  <text x="350" y="170" fill="#94a3b8" font-family="monospace" font-size="9">Ruling out prox swap...</text>
+  <text x="350" y="190" fill="#94a3b8" font-family="monospace" font-size="9">Assembling cited plan...</text>
+
+  <path d="M560 240 L610 240" stroke="#3d8c6d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="620" y="40" width="140" height="400" rx="12" fill="#fff" stroke="#b9ddcd" stroke-width="2"/>
+  <text x="640" y="75" fill="#1b3c31" font-family="system-ui,sans-serif" font-size="14" font-weight="700">Cited Plan</text>
+  <rect x="640" y="95" width="100" height="60" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="648" y="115" fill="#92400e" font-family="system-ui,sans-serif" font-size="8" font-weight="600">1. Bypass switch</text>
+  <text x="648" y="130" fill="#92400e" font-family="monospace" font-size="7">WO-2023-0847</text>
+  <rect x="640" y="170" width="100" height="40" rx="6" fill="#f0f7f4" stroke="#8cc5ad"/>
+  <text x="648" y="190" fill="#255a47" font-family="system-ui,sans-serif" font-size="8">2. Check TB-14</text>
+  <rect x="640" y="225" width="100" height="40" rx="6" fill="#f0f7f4" stroke="#8cc5ad"/>
+  <text x="648" y="245" fill="#255a47" font-family="system-ui,sans-serif" font-size="8">3. Inspect K17</text>
+
+  <text x="400" y="460" text-anchor="middle" fill="#5fa889" font-family="system-ui,sans-serif" font-size="11">Shift Sage: messy logs in, cited fixes out</text>
+</svg>
